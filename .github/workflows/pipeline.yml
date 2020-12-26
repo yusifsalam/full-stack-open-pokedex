@@ -35,4 +35,4 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           healthcheck: 'https://yusifs-pokedex.herokuapp.com/health'
           checkstring: 'ok'
-          procfile: 'web: npm fail.js'
+          procfile: 'web: node app.js'
