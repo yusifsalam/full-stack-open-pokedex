@@ -33,3 +33,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'yusifs-pokedex'
           heroku_email: ${{secrets.HEROKU_EMAIL}}
+          healthcheck: 'https://yusifs-pokedex.herokuapp.com/health'
+          checkstring: 'ok'
+          procfile: 'web: npm fail.js'
