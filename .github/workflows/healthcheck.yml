@@ -1,0 +1,20 @@
+name: Healthcheck
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 8 * * *'
+
+jobs:
+  scheduled_health_check:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check the health of deployed site
+        uses: jtalk/url-health-check-action@v1.2
+        with:
+          url: https://yusifs-pokedex.herokuapp.com
+          follow-redirect: no
+          max-attempts: 3
+          retry-delay: 5s
